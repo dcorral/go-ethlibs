@@ -14,7 +14,13 @@ import (
 	"github.com/INFURA/go-ethlibs/node"
 )
 
+<<<<<<< HEAD
 func getClient(t *testing.T, ctx context.Context) node.Client {
+||||||| parent of 10b39ac (Add basic Authorization header to tests with wss)
+func getRopstenClient(t *testing.T, ctx context.Context) node.Client {
+=======
+func getTestClient(t *testing.T, ctx context.Context) node.Client {
+>>>>>>> 10b39ac (Add basic Authorization header to tests with wss)
 	// These test require a ropsten websocket URL to test with, for example ws://localhost:8546 or wss://ropsten.infura.io/ws/v3/:YOUR_PROJECT_ID
 	base_url := os.Getenv("ETHLIBS_TEST_WS_URL")
 	if base_url == "" {
