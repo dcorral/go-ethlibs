@@ -188,15 +188,16 @@ func (mr *MockClientMockRecorder) Call(ctx, msg interface{}) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Call", reflect.TypeOf((*MockClient)(nil).EstimateGas), ctx, msg)
 }
 
-func (m *MockClient) GetAccounts(ctx context.Context) (eth.AccessList, error) {
+// GetAccounts mocks base method.
+func (m *MockClient) GetAccounts(ctx context.Context) ([]eth.Address, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetAccounts", ctx)
-	ret0, _ := ret[0].(eth.AccessList)
+	ret0, _ := ret[0].([]eth.Address)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
-// Call indicates an expected call of Call.
+// Call indicates an expected call of GetAccounts.
 func (mr *MockClientMockRecorder) GetAccounts(ctx, msg interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetAccounts", reflect.TypeOf((*MockClient)(nil).EstimateGas), ctx, msg)
